@@ -1,0 +1,12 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: /go/src/github.com/prometheus/pushgateway
+    docker:
+      - image: circleci/golang:1.10
+    steps:
+      - setup_remote_docker:
+          version: 17.11.0-ce
+      - run: docker info
+      - checkout
